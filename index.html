@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人作品集 · Lens</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 滚动进度条 -->
+    <div class="scroll-progress"></div>
+
+    <!-- 顶部导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="logo">L.</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link">关于</a>
+                <a href="#contact" class="nav-link">联系</a>
+            </div>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="切换昼夜模式">
+                    <div class="theme-dot"></div>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首屏Slogan -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-slogan">用镜头记录<br>未曾谋面的风景</h1>
+            <p class="hero-sub">Design & Life · 光影之间</p>
+        </div>
+    </section>
+
+    <!-- 轮播图区域 -->
+    <section class="carousel-section" id="carousel">
+        <div class="carousel-container">
+            <div class="carousel-viewport" id="carouselViewport">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- 图片项1 -->
+                    <div class="carousel-slide" data-index="0">
+                        <div class="slide-image-wrapper">
+                            <div class="slide-image" style="background-image: url('https://picsum.photos/seed/landscape1/1200/800')"></div>
+                            <div class="slide-overlay">
+                                <span class="slide-location">📍 冰岛 · 黑沙滩</span>
+                                <span class="slide-title">北大西洋的凛冽诗意</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 图片项2 -->
+                    <div class="carousel-slide" data-index="1">
+                        <div class="slide-image-wrapper">
+                            <div class="slide-image" style="background-image: url('https://picsum.photos/seed/landscape2/1200/800')"></div>
+                            <div class="slide-overlay">
+                                <span class="slide-location">📍 京都 · 岚山竹林</span>
+                                <span class="slide-title">翠色掩映的千年古都</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 图片项3 -->
+                    <div class="carousel-slide" data-index="2">
+                        <div class="slide-image-wrapper">
+                            <div class="slide-image" style="background-image: url('https://picsum.photos/seed/landscape3/1200/800')"></div>
+                            <div class="slide-overlay">
+                                <span class="slide-location">📍 瑞士 · 格林德瓦</span>
+                                <span class="slide-title">阿尔卑斯山脚下的童话</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 图片项4 -->
+                    <div class="carousel-slide" data-index="3">
+                        <div class="slide-image-wrapper">
+                            <div class="slide-image" style="background-image: url('https://picsum.photos/seed/landscape4/1200/800')"></div>
+                            <div class="slide-overlay">
+                                <span class="slide-location">📍 大理 · 洱海</span>
+                                <span class="slide-title">苍山洱海 风花雪月</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 图片项5 -->
+                    <div class="carousel-slide" data-index="4">
+                        <div class="slide-image-wrapper">
+                            <div class="slide-image" style="background-image: url('https://picsum.photos/seed/landscape5/1200/800')"></div>
+                            <div class="slide-overlay">
+                                <span class="slide-location">📍 东京 · 涩谷天空</span>
+                                <span class="slide-title">城市之巅的黄昏时刻</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 左右箭头 -->
+            <button class="carousel-arrow carousel-arrow-left" id="prevBtn" aria-label="上一张">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="carousel-arrow carousel-arrow-right" id="nextBtn" aria-label="下一张">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <!-- 底部指示器 -->
+            <div class="carousel-indicators">
+                <div class="carousel-counter">
+                    <span class="counter-current" id="currentIndex">01</span>
+                    <span class="counter-separator">/</span>
+                    <span class="counter-total" id="totalCount">05</span>
+                </div>
+                <div class="carousel-dots" id="carouselDots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!-- 全屏浏览按钮 -->
+            <button class="fullscreen-btn" id="fullscreenBtn" aria-label="全屏浏览">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- 个人标签区 -->
+    <section class="tags-section" id="about">
+        <div class="tags-container">
+            <div class="tag-card">
+                <div class="tag-icon">📍</div>
+                <div class="tag-text">城市漫游者</div>
+                <div class="tag-desc">用脚步丈量世界</div>
+            </div>
+            <div class="tag-card">
+                <div class="tag-icon">📷</div>
+                <div class="tag-text">生活记录者</div>
+                <div class="tag-desc">捕捉瞬间的美好</div>
+            </div>
+            <div class="tag-card">
+                <div class="tag-icon">✍️</div>
+                <div class="tag-text">随笔撰稿人</div>
+                <div class="tag-desc">书写旅途的故事</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部页脚区 -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-wechat">
+                <div class="wechat-qr-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17.5 17.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+                        <path d="M6.5 11.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                        <path d="M8 17c1.5-1.5 3.5-2.5 5.5-2.5s4 1 5.5 2.5"></path>
+                        <path d="M12 22c-2.5 0-4.5-1-6-2.5"></path>
+                    </svg>
+                </div>
+                <h3 class="wechat-name">搜索「Lens·灵感集」</h3>
+                <p class="wechat-desc">记录日常琐碎，也望山川湖海。期待你的关注。</p>
+                <button class="wechat-btn" id="copyWechatBtn">
+                    <span class="btn-icon">🔍</span>
+                    <span class="btn-text">长按识别二维码关注</span>
+                </button>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Lens. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast 提示 -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <span class="toast-icon">✓</span>
+            <span class="toast-message">公众号ID已复制，打开微信搜索关注</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
